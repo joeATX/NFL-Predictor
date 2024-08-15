@@ -1,5 +1,11 @@
 import streamlit as st
+import pandas as pd
 from eda_app import run_eda_app
+
+@st.cache_data
+def load_data(df1):
+    """Load data from a CSV file."""
+    return pd.read_csv(df1)
 
 desc_temp = """
     #### NFL Predictor App

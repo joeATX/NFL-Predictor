@@ -1,5 +1,5 @@
 import streamlit as st
-import pandas as pd
+# import pandas as pd
 
 
 # @st.cache_data
@@ -10,7 +10,7 @@ import pandas as pd
 
 def run_eda_app():
     st.subheader("Exploratory Data Analysis")
-    submenu = st.sidebar.selectbox("Submenu", ["Descriptive", "Plots"])
+    # submenu = st.sidebar.selectbox("Submenu", ["Descriptive", "Plots"])
     # if submenu == "Descriptive":
     #     st.dataframe(df1)
 
