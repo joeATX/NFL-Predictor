@@ -2,10 +2,15 @@ import streamlit as st
 import pandas as pd
 from eda_app import run_eda_app
 
+
 @st.cache_data
-def load_data(df1):
+def load_data(df2):
     """Load data from a CSV file."""
-    return pd.read_csv(df1)
+    return pd.read_csv(df2)
+
+
+df2 = load_data('data/nfl_team_stats_2002-2023.csv')
+
 
 desc_temp = """
     #### NFL Predictor App
@@ -52,10 +57,13 @@ desc_temp = """
     - ML Section: ML Predictor App
     """
 
+
 def main():
+    app_title = ("NFL Win/Loss Predictor App")
     menu = ["Home", "EDA", "ML", "About"]
     choice = st.sidebar.selectbox("Menu", menu)
     if choice == "Home":
+        st.title(app_title)
         st.subheader("Home")
         st.write(desc_temp)
     elif choice == "EDA":
@@ -65,3 +73,7 @@ def main():
         pass
     else:
         st.subheader("About")
+
+
+if __name__ == '__main__':
+    main()
